@@ -1,3 +1,71 @@
-div {
-  background: forestgreen;
+:root {
+  --duration: 1s;
+  --view-distance: 2500px;
 }
+input[type="checkbox"] {
+  display: none;
+}
+
+#card {
+  position: relative;
+  left: 100px;
+  top: 50px;
+  
+  width: 340px;
+  height: 215px;
+
+ // transition: transform var(--duration) ease-in-out;
+  transform-style: preserve-3d;
+}
+.frontside, 
+.backside {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  //transition: background-image 0s linear calc(var(--duration) / 2);
+}
+.backside {
+  transform: rotateX(180deg);
+}
+
+
+#card .frontside {
+  background-image: url("src/images/route13.jpg"); 
+  transform: rotateX(180deg);
+ // animation: cardflip var(--duration) linear alternate;
+} 
+#card .backside {
+  background-image: url("src/images/_route_back.jpg");
+//  animation: cardflip var(--duration) linear alternate;
+}
+
+
+input[type="checkbox"]:checked + label #card
+{
+  transform: perspective(var(--view-distance)) rotateX(0deg);
+    animation: cardlift var(--duration) reverse;
+}
+
+input[type="checkbox"]:not(:checked) + label #card
+{
+  transform: perspective(var(--view-distance)) rotateX(180deg);
+    animation: cardlift2 var(--duration);
+}
+
+
+
+@keyframes cardlift {
+  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-out;}
+  50% {transform: perspective(var(--view-distance)) translateZ(600px) rotateX(90deg);  animation-timing-function: linear;}
+	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-in;}
+}
+@keyframes cardlift2 {
+  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-out;}
+  50% {transform: perspective(var(--view-distance)) translateZ(600px) rotateX(90deg);  animation-timing-function: linear;}
+	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-in;}
+}
+
+   
