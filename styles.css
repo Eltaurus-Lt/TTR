@@ -58,14 +58,14 @@ input[type="checkbox"]:not(:checked) + label #card
 
 
 @keyframes cardlift {
-  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-out;}
+  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-in;}
   50% {transform: perspective(var(--view-distance)) translateZ(600px) rotateX(90deg);  animation-timing-function: linear;}
-	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-in;}
+	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-out;}
 }
 @keyframes cardlift2 {
-  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-out;}
+  0% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(0deg); animation-timing-function: ease-in;}
   50% {transform: perspective(var(--view-distance)) translateZ(600px) rotateX(90deg);  animation-timing-function: linear;}
-	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-in;}
+	100% {transform: perspective(var(--view-distance)) translateZ(0px) rotateX(180deg);  animation-timing-function: ease-out;}
 }
 
    
