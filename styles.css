@@ -38,7 +38,7 @@ input[type="checkbox"] {
  // animation: cardflip var(--duration) linear alternate;
 } 
 #card .backside {
-  background-image: url("src/images/_route_back.jpg");
+  background-image: url("https://raw.githubusercontent.com/Eltaurus-Lt/TTR/main/src/images/_route_back.jpg");
 //  animation: cardflip var(--duration) linear alternate;
 }
 
